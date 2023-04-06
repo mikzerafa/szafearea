@@ -13,6 +13,7 @@
 }
 
 .Heading{
+  text-decoration: none;
   text-align: center;
   font-size: 3vw;
   font-family: "Neucha", cursive;
