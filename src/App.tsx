@@ -1,14 +1,19 @@
 import React from 'react';
 import './Assets/App.css';
-import {InputField}from './Components/InputField';
 import { Nav } from './Components/Nav';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import {HomePage} from './Components/HomePage'
-import { ArticlesPage } from './Components/ArticlesPage';
-import { Footer } from './Components/Footer';
 
+import { Footer } from './Components/Footer';
 import { heading } from './Components/Titles';
 import { Grid } from './Components/Grid';
+
+import {HomePage} from './Components/HomePage'
+import { LoginPage } from './Components/LoginPage';
+import { GoalPage } from './Components/GoalPage';
+import { SymptomsAndStrategiesPage } from './Components/SymptomsAndStrategiesPage';
+import { ArticlesPage } from './Components/ArticlesPage';
+import { MedReviewPage } from './Components/MedReviewPage';
+import { UrgentHelpPage } from './Components/UrgentHelpPage';
 
 
 const home = Nav.Menu('/', "Home");
@@ -31,11 +36,15 @@ const header = Grid([title, headerNav])
 const  App:React.FC = () => (
   <div className="App">
     {header}
-    <InputField.inDiv/>
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/articles" element={<ArticlesPage />} />
+        <Route path="/SymptomsAndStrategies" element={<SymptomsAndStrategiesPage />} />
+        <Route path="/MedReview" element={<MedReviewPage />} />
+        <Route path='/UrgentHelp' element={<UrgentHelpPage/>} />
+        <Route path="/login" element= {<LoginPage/>}/>
+        <Route path='/Goal' element={<GoalPage/>}/>
       </Routes>
     </Router>
     {footerNav}
