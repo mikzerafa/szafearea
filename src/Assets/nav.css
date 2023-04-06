@@ -1,0 +1,54 @@
+.NavMenu{
+    background: radial-gradient(#76f295, #1c923a);
+    width: 120px;
+    border-radius: 50px;
+    padding: 15px 18px;
+    font-size: 25px;
+    line-height: 40px;
+    border: none;
+    transition: 0.2s;
+    box-shadow: inset 0 0 5px black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.NavMenu2{
+    background: radial-gradient(#76f295, #1c923a);
+    width: 250px;
+    border-radius: 50px;
+    padding: 15px 18px;
+    font-size: 25px;
+    line-height: 40px;
+    border: none;
+    transition: 0.2s;
+    box-shadow: inset 0 0 5px black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+.NavMenu:hover, .NavMenu2:hover {
+    color: #e66465;
+    background: radial-gradient(#c6edd0, #b9ffca);
+}
+
+.NavText{
+   text-decoration: none;
+   color: rgb(55, 55, 55);
+}
+
+.NavMenu:hover > .NavText, .NavMenu2:hover > .NavText{
+    color: rgb(12, 184, 75);;
+}
+
+.navMenuListItem{
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.NavMenuList{
+
+}

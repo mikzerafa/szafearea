@@ -1,0 +1,55 @@
+:root{
+    --inputWidth: 100px;
+    --inputSpread: calc(var(--inputWidth) /10);
+    --ButtonColor: #2f74c0;
+    --ButtonHighlighted: #4f96d2;
+    --TextSize: 15px;
+    --TextSizeFocused: 16px;
+}
+
+.input {
+    display: flex;
+    width: 150%;
+    position: relative;
+    align-items: center;
+}
+
+.inputField{
+    width: 100%;
+    border-radius: 50px;
+    padding: 20px 30px;
+    font-size: 25px;
+    border: none;
+    transition: 0.2s;
+    box-shadow: inset 0 0 5px black;
+
+}
+
+.inputField:focus {
+    box-shadow: 0 0 10px 1000px rgba(0,0,0,0.2);
+    outline: none;
+}
+
+.inputSubmit {
+    position: absolute;
+    width: var(--inputWidth);
+    height: 50px;
+    margin: 12px;
+    border-radius: 50px;
+    right: 0px;
+    border: none;
+    font-size: 15px;
+    background-color: var(--ButtonColor);
+    color: white;
+    transition: 0.2s all;
+    box-shadow: 0 - 10px black;
+}
+
+.inputSubmit:hover {
+    box-shadow: 0 0 2px var(--inputSpread) rgba(255,255,255,0.5);
+    background-color: var(--ButtonHighlighted);
+}
+
+.inputButtonText:hover {
+    font-size: var(--TextSizeFocused);
+}

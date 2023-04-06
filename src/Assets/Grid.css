@@ -1,0 +1,15 @@
+:root{
+    --size: 3;
+}
+
+.grid-container {
+    display: grid;
+    padding-top: 20px;
+    grid-template-columns: repeat(var(--size), 1fr); /* create three equal-width columns */
+    grid-gap: 10px; /* add some space between the columns */
+  }
+
+.grid-item{
+    display: flex;
+    align-items: center;
+}
