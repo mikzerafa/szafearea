@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Assets/App.css';
 import { Nav } from './Components/Generic/Nav';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -33,14 +33,20 @@ const title = heading("SZafeArea");
 const header = Grid([title, headerNav])
 
 
-const  App:React.FC = () => (
+const  App:React.FC = () => {
+  console.log("app running")
+  const [toSearch, setToSearch]= useState<string>("");
+  
+  return (
+
+
   <div className="App">
-    {header}
+   {header}
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/articles" element={<ArticlesPage />} />
-        <Route path="/SymptomsAndStrategies" element={<SymptomsAndStrategiesPage />} />
+        <Route path="/SymptomsAndStrategies" element={<SymptomsAndStrategiesPage toSearch={toSearch} setToSearch= {setToSearch} />}/>
         <Route path="/MedReview" element={<MedReviewPage />} />
         <Route path='/UrgentHelp' element={<UrgentHelpPage/>} />
         <Route path="/login" element= {<LoginPage/>}/>
@@ -48,16 +54,10 @@ const  App:React.FC = () => (
       </Routes>
     </Router>
     {footerNav}
-
-
-
-
-
-
   </div>
 
 
-)
+)}
 
 
 export default App;

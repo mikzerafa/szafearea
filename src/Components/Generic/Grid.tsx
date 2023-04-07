@@ -7,7 +7,7 @@ const Grid = (elements: JSX.Element[], amount:number|string = "all") => {
     {
       amount = size;
     }
-    const gridItems = elements.map((item, index) => <div className="grid-item" key={index}>{item}</div>)
+    const gridItems = elements.map((item, index) => <div className="grid-item" key={"gridItems" +index}>{item}</div>)
 
   return (
     <div className="grid-container" style={{ gridTemplateColumns: `repeat(${amount}, 1fr)` }}>

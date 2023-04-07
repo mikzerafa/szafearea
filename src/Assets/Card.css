@@ -1,12 +1,58 @@
-.card {
-    background: radial-gradient(#c3c9f0, #8f9acf); /* Slight green tinge background */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add shadow effect */
-    padding: 20px; /* Add some padding to create space between content and border */
-    border-radius: 20px; /* Add some border-radius to create rounded corners */
-    width: 100px;
-    height: 70px;
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@200&family=EB+Garamond&family=Neucha&display=swap');
+
+:root{
+    --DetailsFontSize: 0px;
+    --DetailsFontSizeMax: 18px;
+
 }
 
 .cardText{
+    font-family:  'EB Garamond' ;
+    font-weight: bold;
+    text-align: center;
+}
 
+.SymptomInfoIcon{
+    position: absolute;
+    font-size: large;
+    top: 15px;
+}
+
+.cardCheckbox{
+    position: absolute;
+    bottom: 14px;
+    right: 25px;
+}
+
+.card:has(.SymptomInfoIcon:hover){
+    width: 180px;
+    height: 180px;
+    --DetailsFontSize: var(--DetailsFontSizeMax);
+
+}
+
+.card {
+    font-family: 'Anuphan';
+    position: relative;
+    background: radial-gradient(#c3c9f0, #8f9acf); /* Slight green tinge background */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    padding: 30px; /* Add some padding to create space between content and border */
+    border-radius: 20px; /* Add some border-radius to create rounded corners */
+    width: 100px;
+    height: 100px;
+
+
+    transition: height 1s, width 1s;
+}
+
+
+.cardDetails{
+    font-family: 'Anuphan';
+    font-weight: bold;
+    color: whitesmoke;
+    font-size: var(--DetailsFontSize);
+}
+
+.cardDetails:hover{
+    --DetailsFontSize: var(var(--DetailsFontSizeMax))
 }

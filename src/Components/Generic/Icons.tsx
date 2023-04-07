@@ -5,6 +5,6 @@ export function HomeIcon() {
     return <span><AiOutlineHome /> </span>
 }
 
-export function InfoIcon() {
-    return <span><AiOutlineInfoCircle/></span>
+export function InfoIcon(key:string = ''+Date.now(), className:string = "") {
+    return <span className={className} key={key}><AiOutlineInfoCircle/></span>
 }

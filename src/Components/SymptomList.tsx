@@ -1,6 +1,6 @@
 import { ThreeSymptomModel } from "../Enums/three-symptom-model";
 
-type Symptom = {
+export type Symptom = {
   name: string;
   description: string;
   type: ThreeSymptomModel;
@@ -353,5 +353,5 @@ const SymptomList: Symptom[] = [
 ];
 
 export default {
-  SymptomList
+  SymptomList,
 }
