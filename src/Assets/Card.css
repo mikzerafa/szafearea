@@ -1,0 +1,12 @@
+.card {
+    background: radial-gradient(#c3c9f0, #8f9acf); /* Slight green tinge background */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    padding: 20px; /* Add some padding to create space between content and border */
+    border-radius: 20px; /* Add some border-radius to create rounded corners */
+    width: 100px;
+    height: 70px;
+}
+
+.cardText{
+
+}

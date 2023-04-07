@@ -1,11 +1,11 @@
 import React from 'react';
 import './Assets/App.css';
-import { Nav } from './Components/Nav';
+import { Nav } from './Components/Generic/Nav';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import { Footer } from './Components/Footer';
-import { heading } from './Components/Titles';
-import { Grid } from './Components/Grid';
+import { Footer } from './Components/Generic/Footer';
+import { heading } from './Components/Generic/Titles';
+import { Grid } from './Components/Generic/Grid';
 
 import {HomePage} from './Components/HomePage'
 import { LoginPage } from './Components/LoginPage';
@@ -16,7 +16,7 @@ import { MedReviewPage } from './Components/MedReviewPage';
 import { UrgentHelpPage } from './Components/UrgentHelpPage';
 
 
-const home = Nav.Menu('/', "Home");
+const home = Nav.Home();
 const goal = Nav.Menu('/goal', 'Goal')
 const login = Nav.Menu('/login', "Login")
 

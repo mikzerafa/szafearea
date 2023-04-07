@@ -353,5 +353,5 @@ const SymptomList: Symptom[] = [
 ];
 
 export default {
-  SymptomList,
-};
+  SymptomList
+}

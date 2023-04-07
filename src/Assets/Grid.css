@@ -6,10 +6,11 @@
     display: grid;
     padding-top: 20px;
     grid-template-columns: repeat(var(--size), 1fr); /* create three equal-width columns */
-    grid-gap: 10px; /* add some space between the columns */
+    grid-gap: 20px; /* add some space between the columns */
   }
 
 .grid-item{
     display: flex;
     align-items: center;
+    margin: auto;
 }

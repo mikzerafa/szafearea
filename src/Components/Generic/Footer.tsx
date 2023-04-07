@@ -1,5 +1,5 @@
-import React from "react"
-import '../Assets/footer.css'
+import React from "react";
+import '../../Assets/footer.css';
 const Footer = {
 
     nav: (elements: JSX.Element) => {

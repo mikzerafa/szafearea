@@ -1,5 +1,5 @@
 import React from 'react';
-import "../Assets/inputField.css";
+import "../../Assets/inputField.css";
 
 const InputField = {
   normal: () => {return (

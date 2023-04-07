@@ -1,0 +1,19 @@
+.SymptomsAndStrategiesDiv{
+    width: 100vw;
+    text-align: center;
+   
+}
+
+.SymptomsAndStrategiesHeader{
+    text-align: center;
+    margin: auto;
+    margin: 30px;
+
+}
+
+.SymptomsList{
+    width: 80vw;
+    text-align: center;
+    margin: auto;
+
+}

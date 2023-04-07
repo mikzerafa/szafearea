@@ -1,13 +1,19 @@
 import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { JsxElement } from 'typescript';
-import '../Assets/nav.css'
+import '../../Assets/nav.css'
+import { HomeIcon } from './Icons';
+
+
 
 const Nav = {
     link: (href: string, text: string) => {
         return (
         <a href={href}>{text}</a>
         );
+    },
+    Home: () => {
+        return (<a className='NavHome' href='/'>{HomeIcon()}</a>);
     },
     Menu: (href: string, text: string) =>{
         return (

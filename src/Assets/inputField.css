@@ -9,9 +9,11 @@
 
 .input {
     display: flex;
-    width: 150%;
+    width: 50%;
     position: relative;
     align-items: center;
+    text-align: center;
+    margin: auto;
 }
 
 .inputField{
