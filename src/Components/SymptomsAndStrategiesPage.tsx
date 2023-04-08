@@ -152,7 +152,7 @@ const SymptomsAndStrategiesPage = ({toSearch, setToSearch, toStore, setToStore, 
       
             if(symptomsToStoreIndex.includes(index))
             {
-                return card.coloured(index,
+                return card.coloured(symptom, index,
                     InfoIcon(index+'', "SymptomInfoIcon"),
                     card.skipLine('first' + index),
                     card.cardText(index, symptom.name), 

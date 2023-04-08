@@ -2,6 +2,7 @@ import React from "react";
 import { IconType } from "react-icons";
 
 import '../../Assets/Card.css'
+import { Symptom } from "../SymptomList";
 import { InputField } from "./InputField";
 
 
@@ -16,7 +17,9 @@ interface prop{
   }
 
 const card = {
-    coloured: (key: number, ...elements: JSX.Element[]) => (<div className="cardColoured" key={'card' +{key}.key}>{elements}</div>),
+    coloured: (symptom:Symptom, key: number, ...elements: JSX.Element[]) => {
+        const classNameValue = "cardColoured symptomType" + symptom.type;
+        return (<div className={classNameValue} key={'card' +{key}.key}>{elements}</div>)},
     normal: (key: number, ...elements: JSX.Element[]) =>(<div className="card" key={'card' +{key}.key}>{elements}</div>),
     cardText: (key: number, text: string) => (<span className="cardText" key={'cardText' +{key}.key}>{text}</span>),
     cardCheckBox:({toStore, setToStore, keyValue, setKey, toSearch, setToSearch}:prop, toRun:Function, symptoms:string[]) => {

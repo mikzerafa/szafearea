@@ -81,6 +81,24 @@
 
     transition: height 1s, width 1s;
 }
+.cardColoured:has(.SymptomInfoIcon:hover){
+    width: 230px;
+    height: 230px;
+    --DetailsFontSize: var(--DetailsFontSizeMax);
+
+}
+
+.cardColoured.symptomType0{
+    background: radial-gradient(#ffbb71, #f97777);
+}
+
+.cardColoured.symptomType1{
+    background: radial-gradient(#7290fd, #6f71ff);
+}
+
+.cardColoured.symptomType2{
+    background: radial-gradient(#f7f08b, #fffd85);
+}
 
 
 .cardDetails{
