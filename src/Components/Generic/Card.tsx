@@ -1,4 +1,5 @@
 import React from "react";
+import { IconType } from "react-icons";
 
 import '../../Assets/Card.css'
 import { InputField } from "./InputField";
@@ -21,7 +22,22 @@ const card = {
     },
 
     cardDetails: (key: number, text: string) => (<span className="cardDetails" key= {"cardDetails"+ {key}.key}>{text}</span>),
-    skipLine:(key: string) =>{return <br className="skipLine" key= {"SkipLine" + {key}.key}/>}
+    skipLine:(key: string) =>{return <br className="skipLine" key= {"SkipLine" + {key}.key}/>},
+    addTags: (tags:JSX.Element[], className:string="", keyValue:number = 0)=>{
+        console.log('Adding tags: ' + tags.length)
+        const output=  (tags.map((tag, index) => 
+        
+        <div className="cardTag" key={'cardTag'+ className +keyValue}>
+                {tag}
+        </div>
+      
+        
+        ));
+
+        console.log(output)
+
+        return output
+    }
     }
 
 export {

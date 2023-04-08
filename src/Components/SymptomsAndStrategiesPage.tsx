@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import {InputField}from './Generic/InputField';
-import SymptomList, {Symptom} from "./SymptomList";
+import SymptomList, {SchizophreniaCopingStrategies, SchizophreniaCopingStrategiesIcons, Symptom} from "./SymptomList";
 import { Grid } from "./Generic/Grid";
 import { card } from "./Generic/Card";
 import { InfoIcon } from "./Generic/Icons";
@@ -30,6 +30,79 @@ function AddedSymptoms (symptoms: string[]) {
             symptoms.forEach((sym) => console.log('Added Symptoms: ' + sym));
         }
     }
+}
+
+const medIcon = SchizophreniaCopingStrategiesIcons[SchizophreniaCopingStrategies.MEDS];
+const therapyIcon = SchizophreniaCopingStrategiesIcons[SchizophreniaCopingStrategies.THERAPY];
+const cleanlinessicon = SchizophreniaCopingStrategiesIcons[SchizophreniaCopingStrategies.CLEANLINESS];
+const socialIcon = SchizophreniaCopingStrategiesIcons[SchizophreniaCopingStrategies.SOCIAL];
+const meditationIcon = SchizophreniaCopingStrategiesIcons[SchizophreniaCopingStrategies.MEDITATION];
+const exerciseIcon = SchizophreniaCopingStrategiesIcons[SchizophreniaCopingStrategies.EXERCISE];
+const eductionIcon = SchizophreniaCopingStrategiesIcons[SchizophreniaCopingStrategies.EDUCATION];
+const routineIcon = SchizophreniaCopingStrategiesIcons[SchizophreniaCopingStrategies.ROUTINE];
+const sleepIcon = SchizophreniaCopingStrategiesIcons[SchizophreniaCopingStrategies.SLEEP_HYGIENE];
+
+
+function AddTagsInDiv(card: any, symptom:Symptom){
+    let output:JSX.Element;
+    const elements: JSX.Element[] =  AddTheRightTags(card, symptom);
+
+    console.log('Amount of Tags found: ' + elements.length);
+
+    return(<div className="TagsOnCard" key={"TagsOnCard_" + symptom.name}> 
+                { elements.map((element) => element)}
+    </div> )
+}
+
+function AddTheRightTags(cards:any, symptom: Symptom, index =0, output:JSX.Element[] = []){
+    
+    if(symptom)
+    {
+        if(symptom.copingStrategies.length > output.length)
+        {
+            console.log('There are strategies: ' + symptom.copingStrategies.length);
+            switch(symptom.copingStrategies[index]){
+                case SchizophreniaCopingStrategies.MEDS:
+                    output = output.concat(card.addTags([medIcon], symptom.name, output.length));
+                    break;
+                case SchizophreniaCopingStrategies.THERAPY:
+                    output = output.concat(card.addTags([therapyIcon], symptom.name, output.length));
+                    break;
+                case SchizophreniaCopingStrategies.CLEANLINESS:
+                    output = output.concat(card.addTags([cleanlinessicon], symptom.name, output.length));
+                    break;
+                case SchizophreniaCopingStrategies.SOCIAL:
+                    output = output.concat(card.addTags([socialIcon], symptom.name, output.length));
+                    break;
+                case SchizophreniaCopingStrategies.MEDITATION:
+                    output = output.concat(card.addTags([meditationIcon], symptom.name, output.length));
+                    break;
+                case SchizophreniaCopingStrategies.EXERCISE:
+                    output = output.concat(card.addTags([exerciseIcon], symptom.name, output.length));
+                    break;
+                case SchizophreniaCopingStrategies.EDUCATION:
+                    output = output.concat(card.addTags([eductionIcon], symptom.name, output.length));
+                    break;
+                case SchizophreniaCopingStrategies.ROUTINE:
+                    output = output.concat(card.addTags([routineIcon], symptom.name, output.length));
+                    break;
+                case SchizophreniaCopingStrategies.SLEEP_HYGIENE:
+                    output = output.concat(card.addTags([sleepIcon], symptom.name, output.length));
+                    break;
+                default:
+                    break;
+            }
+
+            if(symptom.copingStrategies.length > index +1)
+            {
+                console.log('Recursion and concat')
+                output = AddTheRightTags(card, symptom, (index+1), output);
+            }
+        }
+    }
+  
+    console.log('returning output.length: ' + output.length);
+    return output;
 }
 
 const SymptomsAndStrategiesPage = ({toSearch, setToSearch, toStore, setToStore, keyValue, setKey}: prop) => {
@@ -73,10 +146,10 @@ const SymptomsAndStrategiesPage = ({toSearch, setToSearch, toStore, setToStore, 
             
             card.skipLine('second' + index),
             card.cardDetails(index, symptom.description),
-            )
-   
-        }
-    );
+            card.skipLine('third' + index),
+            AddTagsInDiv(card, symptom)
+        )
+        });
 
     const gridOfCards = Grid(cards, 6);
     

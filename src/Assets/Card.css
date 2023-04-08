@@ -6,6 +6,22 @@
 
 }
 
+.TagsOnCard{
+    display: inline-block;
+    position: sticky absolute;
+    bottom: 10px;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.cardTag{
+    color: #5667c6;
+    position:static;
+    display: inline-block;
+    bottom: 5px;
+}
+
 .checkBox{
     position: absolute;
     bottom: 10px;
@@ -19,16 +35,17 @@
 }
 
 .SymptomInfoIcon{
-    position: absolute;
+    top: 10px;
+    position: sticky;
     font-size: large;
-    top: 15px;
+
 }
 
 
 
 .card:has(.SymptomInfoIcon:hover){
-    width: 180px;
-    height: 180px;
+    width: 230px;
+    height: 230px;
     --DetailsFontSize: var(--DetailsFontSizeMax);
 
 }
@@ -40,8 +57,10 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add shadow effect */
     padding: 30px; /* Add some padding to create space between content and border */
     border-radius: 20px; /* Add some border-radius to create rounded corners */
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
 
 
     transition: height 1s, width 1s;
@@ -57,4 +76,8 @@
 
 .cardDetails:hover{
     --DetailsFontSize: var(var(--DetailsFontSizeMax))
+}
+
+.grid-item{
+    position: sticky;
 }

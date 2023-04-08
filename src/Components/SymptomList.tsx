@@ -1,423 +1,538 @@
 import { ThreeSymptomModel } from "../Enums/three-symptom-model";
+import {
+    FaPills,
+    FaUserMd,
+    FaOm,
+    FaUsers,
+    FaRunning,
+    FaBroom,
+    FaBook,
+    FaCalendarAlt,
+    FaBed,
+  } from 'react-icons/fa';
 
 export type Symptom = {
   name: string;
   description: string;
   type: ThreeSymptomModel;
   keys: string[];
+  copingStrategies: SchizophreniaCopingStrategies[];
 };
 
+
+
+
+
+export enum SchizophreniaCopingStrategies {
+    MEDS = "meds",
+    THERAPY = "therapy",
+    MEDITATION = "meditation",
+    SOCIAL = 'social',
+    EXERCISE = "exercise",
+    CLEANLINESS = "cleanliness",
+    EDUCATION = "education",
+    ROUTINE = "routine",
+    SLEEP_HYGIENE = "sleep hygiene"
+  }
+
+  
+  
+  export const SchizophreniaCopingStrategiesIcons = {
+    [SchizophreniaCopingStrategies.MEDS]: <FaPills />,
+    [SchizophreniaCopingStrategies.THERAPY]: <FaUserMd />,
+    [SchizophreniaCopingStrategies.MEDITATION]: <FaOm />,
+    [SchizophreniaCopingStrategies.SOCIAL]: <FaUsers />,
+    [SchizophreniaCopingStrategies.EXERCISE]: <FaRunning />,
+    [SchizophreniaCopingStrategies.CLEANLINESS]: <FaBroom />,
+    [SchizophreniaCopingStrategies.EDUCATION]: <FaBook />,
+    [SchizophreniaCopingStrategies.ROUTINE]: <FaCalendarAlt />,
+    [SchizophreniaCopingStrategies.SLEEP_HYGIENE]: <FaBed />,
+  };
+
 const SymptomList: Symptom[] = [
-  {
+{
     name: "Delusions",
     description: "False beliefs that are not based in reality.",
     type: ThreeSymptomModel.Positive,
     keys: ["false beliefs", "reality", "psychosis", "god"],
-  },
-  {
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
+    },
+    {
     name: "Hallucinations",
     description: "Hearing, seeing, or feeling things that are not really there.",
     type: ThreeSymptomModel.Positive,
     keys: ["perceptions", "sensory experiences", "psychosis", "god"],
-  },
-  {
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
+    },
+    {
     name: "Disorganized speech",
     description: "Difficulty organizing thoughts or expressing them coherently.",
     type: ThreeSymptomModel.Positive,
     keys: ["word salad", "loose associations", "thought disorder", "ego"],
-  },
-  {
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY],
+    },
+    {
     name: "Catatonia",
     description: "Unresponsiveness or immobility, or excessive and uncontrollable movement.",
     type: ThreeSymptomModel.Positive,
     keys: ["movement", "immobility", "psychomotor", "ego"],
-  },
-  {
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
+    },
+    {
     name: "Social withdrawal",
     description: "Reduced interest in social interactions or activities, or lack of emotional response.",
     type: ThreeSymptomModel.Negative,
     keys: ["isolation", "loneliness", "depression", "ego"],
-  },
-  {
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY],
+    },
+    {
     name: "Apathy",
     description: "Lack of motivation or interest in activities, often accompanied by reduced emotional expression.",
     type: ThreeSymptomModel.Negative,
     keys: ["lack of interest", "passivity", "depression", "ego"],
-  },
-  {
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY],
+    },
+    {
     name: "Anhedonia",
     description: "Inability to experience pleasure or joy from activities that are normally enjoyable.",
     type: ThreeSymptomModel.Negative,
     keys: ["lack of pleasure", "depression", "ego"],
-  },
-  {
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY],
+    },
+    {
     name: "Poor memory",
     description: "Difficulty remembering information or events, or impaired ability to learn new things.",
     type: ThreeSymptomModel.Cognitive,
     keys: ["forgetfulness", "amnesia", "dementia", "god"],
-  },
-  {
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
+    },
+    {
     name: "Poor attention",
     description: "Difficulty focusing or sustaining attention on tasks or activities.",
     type: ThreeSymptomModel.Cognitive,
     keys: ["distractibility", "attention deficit", "ADHD", "ego"],
-  },
-  {
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
+    },
+    {
     name: "Impaired decision-making",
     description: "Difficulty making sound decisions, often due to disordered thinking or poor judgment.",
     type: ThreeSymptomModel.Cognitive,
     keys: ["indecisiveness", "poor judgment", "cognitive impairment", "ego"],
-  },
-  {
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EDUCATION],
+    },
+    {
     name: "Incoherent speech",
     description: "Speech that is jumbled, illogical, or difficult to follow.",
     type: ThreeSymptomModel.Positive,
     keys: ["word salad", "loose associations", "thought disorder", "ego"],
-  },
-  {
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.MEDITATION],
+    },
+    {
     name: "Executive dysfunction",
     description: "Difficulty with planning, organizing, and initiating tasks.",
     type: ThreeSymptomModel.Cognitive,
     keys: ["planning", "organization", "initiation"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.ROUTINE],
     },
     {
     name: "Lack of motivation",
     description: "Lack of interest or drive to engage in activities or pursue goals.",
     type: ThreeSymptomModel.Negative,
     keys: ["apathy", "laziness"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
     },
     {
     name: "Reduced emotional expression",
     description: "Limited range or intensity of emotional expression.",
     type: ThreeSymptomModel.Negative,
     keys: ["flat affect", "emotional blunting"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
     },
     {
     name: "Social isolation",
     description: "Withdrawal from social interaction or activities.",
     type: ThreeSymptomModel.Negative,
     keys: ["loneliness", "reclusive", "isolated"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.SOCIAL],
     },
     {
     name: "Depression",
     description: "Persistent feelings of sadness, hopelessness, or emptiness.",
     type: ThreeSymptomModel.Negative,
     keys: ["sadness", "hopelessness", "emptiness"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
     },
     {
     name: "Anxiety",
     description: "Excessive worry, fear, or nervousness.",
     type: ThreeSymptomModel.Negative,
     keys: ["nervousness", "fear", "worry"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.MEDITATION, SchizophreniaCopingStrategies.EXERCISE, SchizophreniaCopingStrategies.SLEEP_HYGIENE],
     },
     {
     name: "Sleep disturbances",
     description: "Difficulty falling or staying asleep, or abnormal sleep patterns.",
     type: ThreeSymptomModel.Negative,
     keys: ["insomnia", "sleeplessness", "nightmares"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.MEDITATION, SchizophreniaCopingStrategies.EXERCISE, SchizophreniaCopingStrategies.SLEEP_HYGIENE],
     },
     {
     name: "Lack of insight",
     description: "Lack of awareness or understanding of one's illness or its impact on others.",
     type: ThreeSymptomModel.Cognitive,
     keys: ["denial", "unawareness", "ignorance"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EDUCATION],
     },
     {
     name: "Paranoid ideation",
     description: "Belief that others are plotting against or intending harm.",
     type: ThreeSymptomModel.Positive,
     keys: ["persecution", "suspicion", "mistrust"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
     },
     {
     name: "Suspiciousness",
     description: "Distrust of others, even without evidence or reason.",
     type: ThreeSymptomModel.Positive,
     keys: ["distrust", "paranoia"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
     },
     {
     name: "Agitation",
     description: "Restlessness or irritability.",
     type: ThreeSymptomModel.Positive,
     keys: ["restlessness", "irritability"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
     },
     {
     name: "Self-neglect",
     description: "Failure to attend to one's basic needs, such as hygiene, nutrition, or medical care.",
     type: ThreeSymptomModel.Negative,
     keys: ["neglect", "self-care"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.CLEANLINESS],
     },
     {
     name: "Self-harm",
     description: "Intentional injury or harm to oneself, often as a coping mechanism.",
     type: ThreeSymptomModel.Positive,
     keys: ["self-injury", "self-harm"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.MEDS],
     },
     {
     name: "Inappropriate emotional responses",
     description: "Emotional responses that do not match the situation or context.",
     type: ThreeSymptomModel.Positive,
     keys: ["inappropriate affect", "mood swings"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.MEDS]
     },
     {
     name: "Impaired abstract reasoning",
     description: "Difficulty understanding or processing abstract concepts or ideas.",
     type: ThreeSymptomModel.Cognitive,
     keys: ["abstract thinking problems", "abstract reasoning difficulties", "conceptualization issues"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EDUCATION]
     },
     {
     name: "Reduced speech output",
     description: "Decreased frequency or amount of speech.",
     type: ThreeSymptomModel.Negative,
     keys: ["limited speech", "speech difficulties", "speech deficits"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE]
     },
     {
     name: "Unusual behavior",
     description: "Behavior that is atypical or deviates from social norms.",
     type: ThreeSymptomModel.Positive,
     keys: ["abnormal behavior", "bizarre behavior", "strange behavior"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.ROUTINE]
     },
     {
     name: "Abnormal movements",
     description: "Unusual or involuntary movements or postures.",
     type: ThreeSymptomModel.Positive,
     keys: ["movement disorders", "involuntary movements", "abnormal motor behavior"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.EXERCISE]
     },
     {
     name: "Lack of emotional responsiveness",
     description: "Inability to express or feel emotions in a normal way.",
     type: ThreeSymptomModel.Negative,
     keys: ["flat affect", "lack of emotions", "emotional blunting"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.MEDITATION]
     },
-
     {
     name: "Perceptual abnormalities",
     description: "Alterations in perception, such as changes in the way things look, sound, feel, taste, or smell.",
     type: ThreeSymptomModel.Positive,
     keys: ["sensory disturbances", "perception issues", "hallucinations"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY]
     },
     {
     name: "Thought insertion",
     description: "Belief that one's thoughts are being inserted into one's mind by an external force.",
     type: ThreeSymptomModel.Positive,
     keys: ["thought control", "intrusive thoughts", "mind control"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
     },
     {
     name: "Thought withdrawal",
     description: "Belief that one's thoughts are being taken away by an external force.",
     type: ThreeSymptomModel.Positive,
     keys: ["loss of thoughts", "thought removal", "mind control"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
     },
     {
     name: "Thought broadcasting",
     description: "Belief that one's thoughts are being broadcasted to others.",
     type: ThreeSymptomModel.Positive,
     keys: ["telepathy", "mind reading", "thought sharing"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
     },
     {
     name: "Ideas of reference",
     description: "Belief that random events or stimuli have personal significance.",
     type: ThreeSymptomModel.Positive,
     keys: ["delusions of reference", "paranoia", "beliefs of persecution"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
     },
     {
     name: "Echolalia",
     description: "Repetition of others' words or phrases.",
     type: ThreeSymptomModel.Positive,
     keys: ["repetitive speech", "parroting", "echoing"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY],
     },
     {
     name: "Echopraxia",
     description: "Repetition of others' movements or gestures.",
     type: ThreeSymptomModel.Positive,
     keys: ["imitating others", "mimicking behavior", "copying movements"],
-    },
-    {
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EDUCATION],
+},
+{
     name: "Hyperreligiosity",
     description: "Excessive or extreme preoccupation with religion or religious beliefs.",
     type: ThreeSymptomModel.Positive,
     keys: ["religious preoccupation", "religious obsession"],
-    },
-    {
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.MEDITATION],
+},
+{
     name: "Avolition",
     description: "Lack of motivation or ability to initiate and complete tasks.",
     type: ThreeSymptomModel.Negative,
     keys: ["lack of motivation", "difficulty completing tasks"],
-    },
-    {
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.ROUTINE],
+},
+{
     name: "Alogia",
     description: "Reduced speech output or poverty of speech.",
     type: ThreeSymptomModel.Negative,
     keys: ["poverty of speech", "reduced verbal output"],
-    },
-    {
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EDUCATION],
+},
+{
     name: "Flat affect",
     description: "Lack of emotional expressiveness, often appearing unresponsive or indifferent.",
     type: ThreeSymptomModel.Negative,
     keys: ["lack of emotion", "emotional unresponsiveness"],
-    },
-    {
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
+},
+{
     name: "Blunted affect",
     description: "Reduced intensity of emotional expressiveness, often appearing apathetic or disinterested.",
     type: ThreeSymptomModel.Negative,
     keys: ["emotional apathy", "reduced emotional expression"],
-    },
-    {
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.MEDITATION],
+},
+{
     name: "Catatonic stupor",
     description: "State of unresponsiveness or immobility, often maintaining a fixed position for extended periods of time.",
     type: ThreeSymptomModel.Positive,
     keys: ["unresponsiveness", "immobility"],
-    },
-    {
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
+},
+{
     name: "Catatonic excitement",
     description: "State of excessive and uncontrollable movement, often including repetitive or stereotyped behaviors.",
     type: ThreeSymptomModel.Positive,
     keys: ["excessive movement", "stereotyped behavior"],
-    },
-    {
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
+},
+{
     name: "Stereotyped speech",
     description: "Repetitive or ritualistic use of language, often including phrases, rhymes, or neologisms.",
     type: ThreeSymptomModel.Positive,
     keys: ["repetitive language", "ritualistic speech"],
-    },
-    {
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.MEDITATION],
+},
+{
     name: "Somatic delusions",
     description: "False beliefs about the body, such as that one is infested with parasites or has a serious illness.",
     type: ThreeSymptomModel.Positive,
     keys: ["false beliefs about body", "physical illness delusions"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
     },
     {
     name: "Nihilistic delusions",
     description: "Belief that one or the world does not exist, or that nothing matters or has any value.",
     type: ThreeSymptomModel.Positive,
     keys: ["belief in non-existence", "lack of meaning"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.MEDITATION],
     },
     {
     name: "Erotomanic delusions",
     description: "False belief that another person, often of higher status, is in love with them.",
     type: ThreeSymptomModel.Positive,
     keys: ["delusions of love", "belief in reciprocal love"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
     },
     {
     name: "Grandiose delusions",
     description: "Exaggerated sense of one's own importance or abilities.",
     type: ThreeSymptomModel.Positive,
     keys: ["exaggerated self-importance", "delusions of grandeur"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
     },
-
     {
     name: "Jealousy delusions",
     description: "False belief that one's partner is unfaithful or interested in someone else.",
     type: ThreeSymptomModel.Positive,
     keys: ["delusions of infidelity", "belief in partner's unfaithfulness"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
     },
     {
     name: "Persecutory delusions",
     description: "False belief that one is being targeted or persecuted by others.",
     type: ThreeSymptomModel.Positive,
     keys: ["paranoia", "feeling targeted by others", "belief of being persecuted"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.CLEANLINESS],
     },
     {
     name: "Control delusions",
     description: "False belief that one is being controlled by an external force or agency.",
     type: ThreeSymptomModel.Positive,
     keys: ["belief of being controlled", "feeling manipulated", "external control delusions"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
     },
     {
     name: "Guilt delusions",
     description: "False belief that one has committed a serious or unforgivable offense.",
     type: ThreeSymptomModel.Positive,
     keys: ["delusions of guilt", "belief of unforgivable offense", "feeling responsible for something"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.MEDITATION],
     },
     {
     name: "Referential delusions",
     description: "False belief that random events or stimuli are personally relevant or directed towards oneself.",
     type: ThreeSymptomModel.Positive,
     keys: ["delusions of reference", "belief of personal significance in random events"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EDUCATION],
     },
     {
     name: "Bizarre delusions",
     description: "Unusual or irrational false beliefs that defy common sense or logic.",
     type: ThreeSymptomModel.Positive,
     keys: ["strange delusions", "irrational beliefs", "unusual false beliefs"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.MEDITATION],
     },
     {
     name: "Disorganized behavior",
     description: "Unpredictable or inappropriate behavior, often including strange or socially unacceptable actions.",
     type: ThreeSymptomModel.Positive,
     keys: ["abnormal behavior", "strange actions", "inappropriate behavior"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
     },
     {
     name: "Emotional instability",
     description: "Frequent and intense fluctuations in mood or affect.",
     type: ThreeSymptomModel.Positive,
     keys: ["mood swings", "unstable emotions", "fluctuating affect"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.MEDITATION],
     },
     {
     name: "Difficulty experiencing pleasure",
     description: "Reduced ability to enjoy or derive pleasure from activities that are normally enjoyable.",
     type: ThreeSymptomModel.Negative,
     keys: ["anhedonia", "inability to feel pleasure", "lack of enjoyment"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE, SchizophreniaCopingStrategies.MEDITATION],
     },
     {
     name: "Difficulty with working memory",
     description: "Impaired ability to hold and manipulate information in short-term memory.",
     type: ThreeSymptomModel.Cognitive,
     keys: ["short-term memory problems", "working memory difficulties"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
     },
     {
     name: "Difficulty with long-term memory",
     description: "Impaired ability to store and retrieve information from long-term memory.",
     type: ThreeSymptomModel.Cognitive,
     keys: ["long-term memory problems", "memory retrieval difficulties"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
     },
     {
     name: "Difficulty with attentional shifting",
     description: "Impaired ability to flexibly shift attention between different tasks or stimuli.",
     type: ThreeSymptomModel.Cognitive,
     keys: ["attention switching problems", "inability to shift focus"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
     },
     {
     name: "Difficulty with task switching",
     description: "Impaired ability to switch between different tasks or cognitive processes.",
     type: ThreeSymptomModel.Cognitive,
     keys: ["task-switching problems", "inability to switch between tasks"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
     },
     {
     name: "Difficulty with response inhibition",
     description: "Impaired ability to inhibit or suppress unwanted or inappropriate responses.",
     type: ThreeSymptomModel.Cognitive,
     keys: ["impulse control problems", "inability to control impulses"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
     },
     {
     name: "Difficulty with cognitive flexibility",
     description: "Impaired ability to adapt or adjust to changing situational demands or rules.",
     type: ThreeSymptomModel.Cognitive,
     keys: ["rigidity of thinking", "inability to adjust to new situations"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
     },
     {
     name: "Difficulty with mental imagery",
     description: "Impaired ability to create or manipulate mental images or representations.",
     type: ThreeSymptomModel.Cognitive,
     keys: ["lack of mental imagery", "difficulty visualizing"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
     },
     {
     name: "Difficulty with mental calculation",
     description: "Impaired ability to perform arithmetic or mathematical calculations.",
     type: ThreeSymptomModel.Cognitive,
     keys: ["math difficulties", "trouble with arithmetic"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
     },
     {
     name: "Difficulty with spatial cognition",
     description: "Impaired ability to perceive or navigate through physical space.",
     type: ThreeSymptomModel.Cognitive,
     keys: ["spatial orientation problems", "getting lost easily"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.EXERCISE],
     },
     {
     name: "Visual hallucinations",
     description: "Seeing things that are not there, such as people, objects, or patterns.",
     type: ThreeSymptomModel.Positive,
     keys: ["seeing things that aren't there", "hallucinations"],
+    copingStrategies: [SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.THERAPY],
     },
+    {
+    name: "Suicidal ideation",
+    description: "Frequent thoughts about or planning for suicide, without necessarily having the intention to carry it out.",
+    type: ThreeSymptomModel.Negative,
+    keys: ["thoughts of suicide", "suicidal thoughts", "suicide ideation"],
+    copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.SLEEP_HYGIENE],
+    }
 ];
 
 export default {
