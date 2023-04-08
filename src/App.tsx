@@ -32,10 +32,23 @@ const schizoGroup = Nav.link("https://www.facebook.com/groups/1544865272418437",
 const title = heading("SZafeArea");
 const header = Grid([title, headerNav])
 
+interface Props {
+  toSearch: string;
+  setToSearch: React.Dispatch<React.SetStateAction<string>>;
+  toStore: string[];
+  setToStore: React.Dispatch<React.SetStateAction<string[]>>;
+  keyValue: string;
+  setKey:  React.Dispatch<React.SetStateAction<string>>;
+}
 
 const  App:React.FC = () => {
   console.log("app running")
   const [toSearch, setToSearch]= useState<string>("");
+  let [toStore, setToStore] = useState<string[]>([]);
+  const [keyValue, setKey] = useState<string>('');
+
+
+
   
   return (
 
@@ -46,7 +59,7 @@ const  App:React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/articles" element={<ArticlesPage />} />
-        <Route path="/SymptomsAndStrategies" element={<SymptomsAndStrategiesPage toSearch={toSearch} setToSearch= {setToSearch} />}/>
+        <Route path="/SymptomsAndStrategies" element={<SymptomsAndStrategiesPage toSearch={toSearch} toStore={toStore} setToSearch={setToSearch} setToStore={setToStore} keyValue={keyValue} setKey={setKey}/>}/>
         <Route path="/MedReview" element={<MedReviewPage />} />
         <Route path='/UrgentHelp' element={<UrgentHelpPage/>} />
         <Route path="/login" element= {<LoginPage/>}/>

@@ -6,7 +6,48 @@ interface props{
   setToSearch: React.Dispatch<React.SetStateAction<string>>;
 }
 
+interface checkBoxProps{
+  toStore: string[];
+  setToStore:React.Dispatch<React.SetStateAction<string[]>>
+  keyValue: string;
+  setKey:React.Dispatch<React.SetStateAction<string>>
+}
+
+function toNumArray(arr:string){
+  const strArr = arr.split(',');
+  const numArr = strArr.map(Number)
+
+  return numArr;
+}
+
 const InputField = {
+  checkBox:({toStore, setToStore, keyValue, setKey}: checkBoxProps)=> {
+    // console.log({key})
+    // console.log({key}.key)
+    // console.log(key)
+    //console.log('key value:' + key);
+    //console.log('Kety second value: ' + keyValue);
+    return (
+    <form className='checkboxInput' key= {'checkboxInput' + {keyValue}}>
+    <input id= {''+{keyValue}} type='checkbox' className='checkBox' key = {'checkBox' + keyValue }
+      onChange={(e) => {
+        if(e.target.checked)
+        {
+          console.log('Ticked checkbox');
+          e.target.value = keyValue;
+          toStore.push(keyValue);
+          setToStore(toStore)
+
+          toStore.forEach((store) => console.log(store));
+          console.log('addedToStore:' + toStore[toStore.length-1])
+        }
+        else{
+          e.target.value = 'cardCheckBox'
+        }
+      }}>
+    </input>
+    </form>
+  )},
   normal: ({toSearch, setToSearch}:props) => {return (
     <form className='input'>
         <input type='input' placeholder='Enter Text' className='inputField'
