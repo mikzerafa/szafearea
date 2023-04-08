@@ -4,21 +4,25 @@ import { IconType } from "react-icons";
 import '../../Assets/Card.css'
 import { InputField } from "./InputField";
 
-interface props{
+
+interface prop{
+    toSearch: string;
+    setToSearch: React.Dispatch<React.SetStateAction<string>> | any;
     toStore: string[];
     setToStore: React.Dispatch<React.SetStateAction<string[]>>;
     keyValue: string;
-    setKey: React.Dispatch<React.SetStateAction<string>>;
-}
+    setKey:React.Dispatch<React.SetStateAction<string>>;
+  
+  }
 
 const card = {
     normal: (key: number, ...elements: JSX.Element[]) =>(<div className="card" key={'card' +{key}.key}>{elements}</div>),
     cardText: (key: number, text: string) => (<span className="cardText" key={'cardText' +{key}.key}>{text}</span>),
-    cardCheckBox:({toStore, setToStore, keyValue, setKey}:props, toRun:Function, symptoms:string[]) => {
+    cardCheckBox:({toStore, setToStore, keyValue, setKey, toSearch, setToSearch}:prop, toRun:Function, symptoms:string[]) => {
         //console.log('key value at card level is: ' + key);
         //toRun(symptoms);
         keyValue = 'cardCheckBox' + keyValue;
-        return InputField.checkBox({toStore, setToStore, keyValue, setKey}, toRun, symptoms);
+        return InputField.checkBox({toStore, setToStore, keyValue, setKey,toSearch,setToSearch}, toRun, symptoms);
     },
 
     cardDetails: (key: number, text: string) => (<span className="cardDetails" key= {"cardDetails"+ {key}.key}>{text}</span>),

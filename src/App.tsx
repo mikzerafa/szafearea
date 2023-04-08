@@ -48,6 +48,8 @@ const  App:React.FC = () => {
   const [keyValue, setKey] = useState<string>('');
 
 
+  console.log('storel' + toStore);
+  console.log("search" + toSearch);
 
   
   return (

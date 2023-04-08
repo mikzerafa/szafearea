@@ -6,11 +6,14 @@ interface props{
   setToSearch: React.Dispatch<React.SetStateAction<string>>;
 }
 
-interface checkBoxProps{
+interface prop{
+  toSearch: string;
+  setToSearch: React.Dispatch<React.SetStateAction<string>> | any;
   toStore: string[];
-  setToStore:React.Dispatch<React.SetStateAction<string[]>>
+  setToStore: React.Dispatch<React.SetStateAction<string[]>>;
   keyValue: string;
-  setKey:React.Dispatch<React.SetStateAction<string>>
+  setKey:React.Dispatch<React.SetStateAction<string>>;
+
 }
 
 function toNumArray(arr:string){
@@ -21,7 +24,7 @@ function toNumArray(arr:string){
 }
 
 const InputField = {
-  checkBox:({toStore, setToStore, keyValue, setKey}: checkBoxProps, toRun:Function, symptoms:string[])=> {
+  checkBox:({toStore, setToStore, toSearch, setToSearch, keyValue, setKey}: prop, toRun:Function, symptoms:string[])=> {
     // console.log({key})
     // console.log({key}.key)
     // console.log(key)
@@ -36,7 +39,7 @@ const InputField = {
           console.log('Ticked checkbox');
           e.target.value = keyValue;
           toStore.push(keyValue);
-          setToStore(toStore)
+          setToStore([...toStore])
           symptoms = [...toStore];
           toRun(symptoms);
           

@@ -2,6 +2,7 @@ import { ThreeSymptomModel } from "../Enums/three-symptom-model";
 import {
     FaPills,
     FaUserMd,
+    FaMoon,
     FaOm,
     FaUsers,
     FaRunning,
@@ -40,7 +41,7 @@ export enum SchizophreniaCopingStrategies {
   export const SchizophreniaCopingStrategiesIcons = {
     [SchizophreniaCopingStrategies.MEDS]: <FaPills />,
     [SchizophreniaCopingStrategies.THERAPY]: <FaUserMd />,
-    [SchizophreniaCopingStrategies.MEDITATION]: <FaOm />,
+    [SchizophreniaCopingStrategies.MEDITATION]: <FaMoon />,
     [SchizophreniaCopingStrategies.SOCIAL]: <FaUsers />,
     [SchizophreniaCopingStrategies.EXERCISE]: <FaRunning />,
     [SchizophreniaCopingStrategies.CLEANLINESS]: <FaBroom />,

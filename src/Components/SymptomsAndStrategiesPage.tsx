@@ -109,6 +109,7 @@ const SymptomsAndStrategiesPage = ({toSearch, setToSearch, toStore, setToStore, 
     
     if(toStore.length>0)
     {
+        //setToStore(toStore)
         toStore.forEach((store) => console.log('to Store4: ' + store));
     }
     
@@ -131,33 +132,61 @@ const SymptomsAndStrategiesPage = ({toSearch, setToSearch, toStore, setToStore, 
     else{
         visibleSymptoms = SymptomList.SymptomList;
     }
+    let gridOfCards:JSX.Element;
+    let gridOfSelectedCards: JSX.Element;
+    let symptomsToStore:string[] = [];
+    let symptomsToStoreIndex:number[] = [];
+
     //Filter Symptom List
     const cards = visibleSymptoms.map((symptom, index) => {
         keyValue = ''+index;
-        let symptomsToStore = [...toStore];
+        symptomsToStore = [...toStore];
        // console.log('key value in symptoms: ' + key)
-        return card.normal(index,
-            InfoIcon(index+'', "SymptomInfoIcon"),
-            card.skipLine('first' + index),
-            card.cardText(index, symptom.name), 
-            
-            
-            card.cardCheckBox({toStore, setToStore,keyValue, setKey}, AddedSymptoms, symptomsToStore), 
-            
-            card.skipLine('second' + index),
-            card.cardDetails(index, symptom.description),
-            card.skipLine('third' + index),
-            AddTagsInDiv(card, symptom)
-        )
-        });
+       console.log('To store symptom: '  +symptomsToStore[0]);
+       const numbersAtEndRegEx = /\d+$/;
 
-    const gridOfCards = Grid(cards, 6);
+       if(symptomsToStore[0])
+       {
+        symptomsToStoreIndex = symptomsToStore.map((symp) => symp.match(numbersAtEndRegEx)).map(Number);
+       }
+      
+     
+            return card.normal(index,
+                InfoIcon(index+'', "SymptomInfoIcon"),
+                card.skipLine('first' + index),
+                card.cardText(index, symptom.name), 
+                
+                
+                card.cardCheckBox({toStore, setToStore,keyValue, setKey, toSearch, setToSearch}, AddedSymptoms, symptomsToStore), 
+                
+                card.skipLine('second' + index),
+                card.cardDetails(index, symptom.description),
+                card.skipLine('third' + index),
+                AddTagsInDiv(card, symptom)
+    
+            )
+
+        
+    });
+    const SelectedSymptoms = cards.filter((element:JSX.Element, index:number) => symptomsToStoreIndex.includes(index)? element: null);
+    const unSelectedSymptoms = cards.filter((element:JSX.Element, index:number) => symptomsToStoreIndex.includes(index)? null: element);
+    
+    gridOfSelectedCards = Grid(SelectedSymptoms, 4);
+    gridOfCards = Grid(unSelectedSymptoms, 6);
+
+       
+        
+
+
     
     return (
         
     <div className='SymptomsAndStrategiesDiv'>
         <div className="SymptomsAndStrategiesHeader">
             <InputField.inDiv toSearch={toSearch} setToSearch={setToSearch}/>
+        </div>
+        <div className="SelectedSymptomList">
+            {gridOfSelectedCards}
         </div>
         <div className="SymptomsList">
             {gridOfCards}
