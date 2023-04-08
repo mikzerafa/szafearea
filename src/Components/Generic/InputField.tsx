@@ -21,7 +21,7 @@ function toNumArray(arr:string){
 }
 
 const InputField = {
-  checkBox:({toStore, setToStore, keyValue, setKey}: checkBoxProps)=> {
+  checkBox:({toStore, setToStore, keyValue, setKey}: checkBoxProps, toRun:Function, symptoms:string[])=> {
     // console.log({key})
     // console.log({key}.key)
     // console.log(key)
@@ -37,9 +37,9 @@ const InputField = {
           e.target.value = keyValue;
           toStore.push(keyValue);
           setToStore(toStore)
-
-          toStore.forEach((store) => console.log(store));
-          console.log('addedToStore:' + toStore[toStore.length-1])
+          symptoms = [...toStore];
+          toRun(symptoms);
+          
         }
         else{
           e.target.value = 'cardCheckBox'

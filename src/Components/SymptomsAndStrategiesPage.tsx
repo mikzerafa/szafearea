@@ -21,11 +21,22 @@ interface prop{
 
 }
 
+function AddedSymptoms (symptoms: string[]) {
+    console.log('Adding symptoms')
+    if(symptoms)
+    {
+        if(symptoms.length > 0)
+        {
+            symptoms.forEach((sym) => console.log('Added Symptoms: ' + sym));
+        }
+    }
+}
+
 const SymptomsAndStrategiesPage = ({toSearch, setToSearch, toStore, setToStore, keyValue, setKey}: prop) => {
     
     if(toStore.length>0)
     {
-        toStore.forEach((store) => console.log('to Store: ' + store));
+        toStore.forEach((store) => console.log('to Store4: ' + store));
     }
     
     
@@ -46,14 +57,15 @@ const SymptomsAndStrategiesPage = ({toSearch, setToSearch, toStore, setToStore, 
     //Filter Symptom List
     const cards = visibleSymptoms.map((symptom, index) => {
         keyValue = ''+index;
-
+        let symptomsToStore = [...toStore];
        // console.log('key value in symptoms: ' + key)
         return card.normal(index,
             InfoIcon(index+'', "SymptomInfoIcon"),
             card.skipLine('first' + index),
             card.cardText(index, symptom.name), 
             
-            card.cardCheckBox({toStore, setToStore,keyValue, setKey}), 
+            
+            card.cardCheckBox({toStore, setToStore,keyValue, setKey}, AddedSymptoms, symptomsToStore), 
             
             card.skipLine('second' + index),
             card.cardDetails(index, symptom.description),
@@ -79,5 +91,6 @@ const SymptomsAndStrategiesPage = ({toSearch, setToSearch, toStore, setToStore, 
 }
 
 export {
-    SymptomsAndStrategiesPage
+    SymptomsAndStrategiesPage,
+    AddedSymptoms
 }

@@ -13,19 +13,11 @@ interface props{
 const card = {
     normal: (key: number, ...elements: JSX.Element[]) =>(<div className="card" key={'card' +{key}.key}>{elements}</div>),
     cardText: (key: number, text: string) => (<span className="cardText" key={'cardText' +{key}.key}>{text}</span>),
-    cardCheckBox:({toStore, setToStore, keyValue, setKey}:props) => {
+    cardCheckBox:({toStore, setToStore, keyValue, setKey}:props, toRun:Function, symptoms:string[]) => {
         //console.log('key value at card level is: ' + key);
-        
+        //toRun(symptoms);
         keyValue = 'cardCheckBox' + keyValue;
-        return InputField.checkBox({toStore, setToStore, keyValue, setKey});
-    },
-    cardCheckBoxStore:({toStore, setToStore, keyValue, setKey}:props) => {
-        
-        keyValue = 'cardCheckBox' + keyValue;
-        //setKey(keyValue);
-        toStore.push(keyValue);
-        setToStore(toStore);
-        return InputField.checkBox({toStore, setToStore, keyValue, setKey});
+        return InputField.checkBox({toStore, setToStore, keyValue, setKey}, toRun, symptoms);
     },
 
     cardDetails: (key: number, text: string) => (<span className="cardDetails" key= {"cardDetails"+ {key}.key}>{text}</span>),
