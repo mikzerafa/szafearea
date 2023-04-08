@@ -48,7 +48,11 @@ const SymptomsAndStrategiesPage = ({toSearch, setToSearch, toStore, setToStore, 
         //console.log('Visible symptoms length' + visibleSymptoms.length)
         //console.log('Symptom name: ' + visibleSymptoms[0].name)
         visibleSymptoms = visibleSymptoms.filter((symptom)=>
-            symptom.name.toLowerCase().includes(toSearch.toLowerCase()) || symptom.description.toLowerCase().includes(toSearch.toLowerCase()) || symptom.type.toLocaleString().toLowerCase().includes(toSearch.toLowerCase())
+            symptom.name.toLowerCase().includes(toSearch.toLowerCase()) || 
+            symptom.description.toLowerCase().includes(toSearch.toLowerCase()) || 
+            symptom.type.toLocaleString().toLowerCase().includes(toSearch.toLowerCase()) ||
+            symptom.keys.some((key) => { console.log('checking key');
+                return key.toLowerCase().includes(toSearch.toLowerCase())})
         );
     }
     else{
