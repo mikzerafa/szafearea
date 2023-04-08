@@ -16,6 +16,7 @@ interface prop{
   }
 
 const card = {
+    coloured: (key: number, ...elements: JSX.Element[]) => (<div className="cardColoured" key={'card' +{key}.key}>{elements}</div>),
     normal: (key: number, ...elements: JSX.Element[]) =>(<div className="card" key={'card' +{key}.key}>{elements}</div>),
     cardText: (key: number, text: string) => (<span className="cardText" key={'cardText' +{key}.key}>{text}</span>),
     cardCheckBox:({toStore, setToStore, keyValue, setKey, toSearch, setToSearch}:prop, toRun:Function, symptoms:string[]) => {

@@ -533,7 +533,20 @@ const SymptomList: Symptom[] = [
     type: ThreeSymptomModel.Negative,
     keys: ["thoughts of suicide", "suicidal thoughts", "suicide ideation"],
     copingStrategies: [SchizophreniaCopingStrategies.THERAPY, SchizophreniaCopingStrategies.MEDS, SchizophreniaCopingStrategies.SLEEP_HYGIENE],
-    }
+    },
+    {
+    name: "Intrusive Thoughts",
+    description: "Unwanted and involuntary thoughts, images, or urges that cause distress or anxiety.",
+    type: ThreeSymptomModel.Cognitive,
+    keys: ["unwanted thoughts", "anxiety", "distress", "obsessive"],
+    copingStrategies: [
+        SchizophreniaCopingStrategies.MEDS,
+        SchizophreniaCopingStrategies.THERAPY,
+        SchizophreniaCopingStrategies.MEDITATION,
+        SchizophreniaCopingStrategies.EXERCISE,
+        SchizophreniaCopingStrategies.SLEEP_HYGIENE,
+    ],
+    },
 ];
 
 export default {
