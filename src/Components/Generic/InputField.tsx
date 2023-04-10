@@ -1,5 +1,6 @@
 import React from 'react';
 import "../../Assets/inputField.css";
+import { Symptom } from '../SymptomList';
 
 interface props{
   toSearch: string;
@@ -9,10 +10,8 @@ interface props{
 interface prop{
   toSearch: string;
   setToSearch: React.Dispatch<React.SetStateAction<string>> | any;
-  toStore: string[];
-  setToStore: React.Dispatch<React.SetStateAction<string[]>>;
-  keyValue: string;
-  setKey:React.Dispatch<React.SetStateAction<string>>;
+  toStore: Symptom[];
+  setToStore: React.Dispatch<React.SetStateAction<Symptom[]>>;
 
 }
 
@@ -24,21 +23,20 @@ function toNumArray(arr:string){
 }
 
 const InputField = {
-  checkBox:({toStore, setToStore, toSearch, setToSearch, keyValue, setKey}: prop, toRun:Function, symptoms:string[])=> {
+  checkBox:({toStore, setToStore, toSearch, setToSearch}: prop, toRun:Function, symptoms:Symptom[],symptom:Symptom)=> {
     // console.log({key})
     // console.log({key}.key)
     // console.log(key)
     //console.log('key value:' + key);
     //console.log('Kety second value: ' + keyValue);
     return (
-    <form className='checkboxInput' key= {'checkboxInput' + {keyValue}}>
-    <input id= {''+{keyValue}} type='checkbox' className='checkBox' key = {'checkBox' + keyValue }
+    <form className='checkboxInput' key= {'checkboxInput' + {toStore}}>
+    <input type='checkbox' className='checkBox' key = {'checkBox' + {toStore} }
       onChange={(e) => {
         if(e.target.checked)
         {
           console.log('Ticked checkbox');
-          e.target.value = keyValue;
-          toStore.push(keyValue);
+          toStore.push(symptom);
           setToStore([...toStore])
           symptoms = [...toStore];
           toRun(symptoms);

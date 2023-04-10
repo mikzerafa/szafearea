@@ -14,6 +14,7 @@ import { SymptomsAndStrategiesPage } from './Components/SymptomsAndStrategiesPag
 import { ArticlesPage } from './Components/ArticlesPage';
 import { MedReviewPage } from './Components/MedReviewPage';
 import { UrgentHelpPage } from './Components/UrgentHelpPage';
+import { Symptom } from './Components/SymptomList';
 
 
 const home = Nav.Home();
@@ -35,21 +36,16 @@ const header = Grid([title, headerNav])
 interface Props {
   toSearch: string;
   setToSearch: React.Dispatch<React.SetStateAction<string>>;
-  toStore: string[];
-  setToStore: React.Dispatch<React.SetStateAction<string[]>>;
-  keyValue: string;
-  setKey:  React.Dispatch<React.SetStateAction<string>>;
+  toStore: Symptom[];
+  setToStore: React.Dispatch<React.SetStateAction<Symptom[]>>;
+  keyValue: Symptom;
+  setKey:  React.Dispatch<React.SetStateAction<Symptom>>;
 }
 
 const  App:React.FC = () => {
   console.log("app running")
   const [toSearch, setToSearch]= useState<string>("");
-  let [toStore, setToStore] = useState<string[]>([]);
-  const [keyValue, setKey] = useState<string>('');
-
-
-  console.log('storel' + toStore);
-  console.log("search" + toSearch);
+  let [toStore, setToStore] = useState<Symptom[]>([]);
 
   
   return (
@@ -61,7 +57,7 @@ const  App:React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/articles" element={<ArticlesPage />} />
-        <Route path="/SymptomsAndStrategies" element={<SymptomsAndStrategiesPage toSearch={toSearch} toStore={toStore} setToSearch={setToSearch} setToStore={setToStore} keyValue={keyValue} setKey={setKey}/>}/>
+        <Route path="/SymptomsAndStrategies" element={<SymptomsAndStrategiesPage toSearch={toSearch} toStore={toStore} setToSearch={setToSearch} setToStore={setToStore}/>}/>
         <Route path="/MedReview" element={<MedReviewPage />} />
         <Route path='/UrgentHelp' element={<UrgentHelpPage/>} />
         <Route path="/login" element= {<LoginPage/>}/>

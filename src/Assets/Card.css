@@ -2,7 +2,7 @@
 
 :root{
     --DetailsFontSize: 0px;
-    --DetailsFontSizeMax: 18px;
+    --DetailsFontSizeMax: 20px;
 
 }
 
@@ -32,6 +32,7 @@
     font-family:  'EB Garamond' ;
     font-weight: bold;
     text-align: center;
+    font-size: 24px;
 }
 
 .SymptomInfoIcon{
@@ -44,8 +45,8 @@
 
 
 .card:has(.SymptomInfoIcon:hover){
-    width: 230px;
-    height: 230px;
+    width: 240px;
+    height: 240px;
     --DetailsFontSize: var(--DetailsFontSizeMax);
 
 }
@@ -57,13 +58,13 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add shadow effect */
     padding: 30px; /* Add some padding to create space between content and border */
     border-radius: 20px; /* Add some border-radius to create rounded corners */
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     display: flex;
     flex-direction: column;
 
 
-    transition: height 1s, width 1s;
+    transition: height 0.8s, width 0.8s;
 }
 
 .cardColoured{
@@ -73,8 +74,8 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add shadow effect */
     padding: 30px; /* Add some padding to create space between content and border */
     border-radius: 20px; /* Add some border-radius to create rounded corners */
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     display: flex;
     flex-direction: column;
 
@@ -92,18 +93,26 @@
     background: radial-gradient(#ffbb71, #f97777);
 }
 
+.cardColoured.symptomType0 > .cardDetails{
+    color:rgb(88, 88, 212);
+}
+
 .cardColoured.symptomType1{
     background: radial-gradient(#7290fd, #6f71ff);
 }
 
 .cardColoured.symptomType2{
-    background: radial-gradient(#f7f08b, #fffd85);
+    background: radial-gradient(#f7f08b, #d5c548);
 }
 
+.cardColoured.symptomType2 > .cardDetails{
+    color: #526abd;
+    font-weight: bolder;
+}
 
 .cardDetails{
     font-family: 'Anuphan';
-    font-weight: bold;
+    font-weight: bolder;
     color: whitesmoke;
     font-size: var(--DetailsFontSize);
 }
