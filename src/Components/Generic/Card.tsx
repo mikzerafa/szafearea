@@ -19,10 +19,10 @@ const card = {
         return (<div className={classNameValue} key={'card' +{key}.key}>{elements}</div>)},
     normal: (key: number, ...elements: JSX.Element[]) =>(<div className="card" key={'card' +{key}.key}>{elements}</div>),
     cardText: (key: number, text: string) => (<span className="cardText" key={'cardText' +{key}.key}>{text}</span>),
-    cardCheckBox:({toStore, setToStore, toSearch, setToSearch}:prop, toRun:Function, symptoms:Symptom[], symptom:Symptom) => {
+    cardCheckBox:({toStore, setToStore, toSearch, setToSearch}:prop, toRun:Function, symptoms:Symptom[], symptom:Symptom, isChecked:boolean) => {
         //console.log('key value at card level is: ' + key);
         //toRun(symptoms);
-        return InputField.checkBox({toStore, setToStore, toSearch,setToSearch}, toRun, symptoms, symptom);
+        return InputField.checkBox({toStore, setToStore, toSearch,setToSearch}, toRun, symptoms, symptom, isChecked);
     },
 
     cardDetails: (key: number, text: string) => (<span className="cardDetails" key= {"cardDetails"+ {key}.key}>{text}</span>),

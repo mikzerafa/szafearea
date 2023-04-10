@@ -1,0 +1,22 @@
+.header{
+    color: aliceblue;
+    font-size: 36px;
+    text-shadow: 0cap;
+    text-align: left;
+}
+
+.headerDiv{
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+.subheader{
+    color: aliceblue;
+    font-size: 30px;
+    text-align: left;
+}
+
+.subheaderDiv{
+    margin-top: 2%;
+    margin-left: 15%;
+}

@@ -149,7 +149,7 @@ const SymptomsAndStrategiesPage = ({toSearch, setToSearch, toStore, setToStore}:
                 card.cardText(index, symptom.name), 
                 
                 
-                card.cardCheckBox({toStore, setToStore, toSearch, setToSearch}, AddedSymptoms, symptomsToStore, symptom), 
+                card.cardCheckBox({toStore, setToStore, toSearch, setToSearch}, AddedSymptoms, symptomsToStore, symptom, true), 
                 
                 card.skipLine('second' + index),
                 card.cardDetails(index, symptom.description),
@@ -165,7 +165,7 @@ const SymptomsAndStrategiesPage = ({toSearch, setToSearch, toStore, setToStore}:
                 card.cardText(index, symptom.name), 
                 
                 
-                card.cardCheckBox({toStore, setToStore, toSearch, setToSearch}, AddedSymptoms, symptomsToStore, symptom), 
+                card.cardCheckBox({toStore, setToStore, toSearch, setToSearch}, AddedSymptoms, symptomsToStore, symptom, false), 
                 
                 card.skipLine('second' + index),
                 card.cardDetails(index, symptom.description),

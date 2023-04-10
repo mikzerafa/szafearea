@@ -1,0 +1,11 @@
+.content{
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    text-shadow: 0cap;
+    text-align: left;
+}
+
+.contentDiv{
+    margin-left: 15%;
+    margin-top: 1%;
+}

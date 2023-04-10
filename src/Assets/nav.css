@@ -13,8 +13,8 @@
 
 
 
-.NavMenu{
-    background: radial-gradient(#76f295, #1c923a);
+.NavMenu{  
+    background: radial-gradient(#c6ffd4, #98fdb1);
     width: 120px;
     border-radius: 50px;
     padding: 15px 18px;
@@ -29,7 +29,7 @@
 }
 
 .NavMenu2{
-    background: radial-gradient(#76f295, #1c923a);
+    background: radial-gradient(#c6ffd4, #98fdb1);
     width: 250px;
     border-radius: 50px;
     padding: 15px 18px;

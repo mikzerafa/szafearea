@@ -23,7 +23,7 @@ function toNumArray(arr:string){
 }
 
 const InputField = {
-  checkBox:({toStore, setToStore, toSearch, setToSearch}: prop, toRun:Function, symptoms:Symptom[],symptom:Symptom)=> {
+  checkBox:({toStore, setToStore, toSearch, setToSearch}: prop, toRun:Function, symptoms:Symptom[],symptom:Symptom, isChecked:boolean=false)=> {
     // console.log({key})
     // console.log({key}.key)
     // console.log(key)
@@ -31,19 +31,19 @@ const InputField = {
     //console.log('Kety second value: ' + keyValue);
     return (
     <form className='checkboxInput' key= {'checkboxInput' + {toStore}}>
-    <input type='checkbox' className='checkBox' key = {'checkBox' + {toStore} }
+    <input type='checkbox' className='checkBox' checked={isChecked} key = {'checkBox' + {toStore} }
       onChange={(e) => {
         if(e.target.checked)
         {
           console.log('Ticked checkbox');
           toStore.push(symptom);
           setToStore([...toStore])
-          symptoms = [...toStore];
-          toRun(symptoms);
           
         }
         else{
           e.target.value = 'cardCheckBox'
+          toStore.splice(toStore.indexOf(symptom), 1)
+          setToStore([...toStore])
         }
       }}>
     </input>
