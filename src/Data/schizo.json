@@ -1,6 +1,35 @@
 {
-    "theSpectrum": "Schizophrenia is a complex and often misunderstood mental health condition. It is not a single disorder but rather a spectrum of related disorders that affect a person's thoughts, feelings, and behavior. This spectrum includes Mood Disorder with Psychotic Features, Schizoaffective Disorder, and Schizophrenia. Understanding the range of related disorders can help individuals, families, and professionals better recognize and address the specific challenges associated with each condition.",
-    "MoodDisorerWithPsychoticFeatures": "Mood Disorder with Psychotic Features, also known as Psychotic Depression, is a severe mental health condition characterized by the presence of both depressive symptoms and psychotic symptoms. The depressive symptoms can include persistent feelings of sadness, hopelessness, loss of interest in activities, and changes in sleep and appetite. The psychotic symptoms typically involve delusions (false beliefs) or hallucinations (false perceptions) that are consistent with the depressive themes. /nThis condition is distinct from other disorders on the schizophrenia spectrum because the psychotic symptoms occur exclusively during episodes of major depression. Treatment for Mood Disorder with Psychotic Features typically involves a combination of antidepressant and antipsychotic medications, as well as psychotherapy.",
+    "theSpectrum": "Schizophrenia is a complex and often misunderstood mental health condition. It is not a single disorder but rather a spectrum of related disorders that affect a person's thoughts, feelings, and behavior. Understanding the range of related disorders can help individuals, families, and professionals better recognize and address the specific challenges associated with each condition.",
     "SchizoAffectiveDisorder": "Schizoaffective Disorder is a mental health condition that encompasses symptoms of both schizophrenia and a mood disorder, such as depression or bipolar disorder. Individuals with schizoaffective disorder may experience hallucinations, delusions, disorganized thinking, and mood disturbances such as mania or depression. The key difference between schizoaffective disorder and other schizophrenia spectrum disorders is the presence of prominent mood episodes that occur concurrently with psychotic symptoms. /nThe treatment for schizoaffective disorder generally involves a combination of antipsychotic medications to address the psychotic symptoms and mood stabilizers or antidepressants to treat the mood disorder component. Psychotherapy, including cognitive-behavioral therapy (CBT), family therapy, and group therapy, can also play a crucial role in helping individuals with schizoaffective disorder manage their symptoms and improve their quality of life.",
-    "Schizophrenia": "Schizophrenia is a chronic and severe mental health disorder that affects a person's thoughts, emotions, and behaviors. It is characterized by the presence of positive symptoms, such as hallucinations and delusions, and negative symptoms, like social withdrawal, flattened affect, and difficulty with motivation. Disorganized thinking, speech, and behavior are also common features of schizophrenia. /n   The exact cause of schizophrenia is still unknown, but it is believed to involve a combination of genetic, biochemical, and environmental factors. Treatment for schizophrenia typically involves antipsychotic medications to manage the positive symptoms, along with psychotherapy, psychosocial interventions, and supportive services to address the negative symptoms and improve overall functioning."
+    "Schizophrenia": "Schizophrenia is a chronic and severe mental health disorder that affects a person's thoughts, emotions, and behaviors. It is characterized by the presence of positive symptoms, such as hallucinations and delusions, and negative symptoms, like social withdrawal, flattened affect, and difficulty with motivation. Disorganized thinking, speech, and behavior are also common features of schizophrenia. /n   The exact cause of schizophrenia is still unknown, but it is believed to involve a combination of genetic, biochemical, and environmental factors. Treatment for schizophrenia typically involves antipsychotic medications to manage the positive symptoms, along with psychotherapy, psychosocial interventions, and supportive services to address the negative symptoms and improve overall functioning.",
+    "Spectrum": [
+        {
+          "name": "Schizotypal Personality Disorder (STPD)",
+          "detail": "This is a personality disorder characterized by odd beliefs, eccentric behavior, and social anxiety. Individuals with STPD may have unusual perceptual experiences but do not typically exhibit full-blown psychotic symptoms."
+        },
+        {
+          "name": "Schizoid Personality Disorder",
+          "detail": "This personality disorder is characterized by social withdrawal, emotional coldness, and a preference for solitude. Although individuals with schizoid personality disorder may have some features in common with schizophrenia, they do not experience hallucinations or delusions."
+        },
+        {
+          "name": "Delusional Disorder",
+          "detail": "This condition involves the presence of one or more non-bizarre delusions (false beliefs) that persist for at least one month. These delusions do not significantly impair functioning, and individuals with delusional disorder do not exhibit other symptoms of schizophrenia, such as hallucinations or disorganized speech."
+        },
+        {
+          "name": "Brief Psychotic Disorder",
+          "detail": "This disorder is characterized by the sudden onset of psychotic symptoms, such as hallucinations, delusions, or disorganized speech, which last for at least one day but less than one month. After the episode, the individual fully returns to their previous level of functioning."
+        },
+        {
+          "name": "Schizophreniform Disorder",
+          "detail": "This condition involves symptoms similar to schizophrenia, including hallucinations, delusions, disorganized speech, and negative symptoms. However, the duration of symptoms is between one and six months, which is shorter than the required duration for a schizophrenia diagnosis."
+        },
+        {
+          "name": "Schizoaffective Disorder",
+          "detail": "Schizoaffective disorder is characterized by the presence of both schizophrenia symptoms (hallucinations, delusions, disorganized speech) and mood disorder symptoms (depression or mania). The psychotic symptoms must be present for a significant portion of the illness and must also occur independently of mood episodes."
+        },
+        {
+          "name": "Schizophrenia",
+          "detail": "This is a chronic and severe mental health disorder that affects a person's thoughts, emotions, and behaviors. It is characterized by the presence of positive symptoms, such as hallucinations and delusions, negative symptoms like social withdrawal, flattened affect, and difficulty with motivation, as well as disorganized thinking, speech, and behavior."
+        }
+      ]
 }

@@ -1,0 +1,41 @@
+.Conditions{
+    width: 70vw;
+    margin: auto;
+}
+
+.ConditionCard > .card{
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(#93a0f8, #d7b0ff); /* Slight green tinge background */
+}
+.ConditionCard > .card:has(span:first-of-type){
+    margin: auto;
+    text-align: center;
+}
+
+[class^="conditionDetails"]{
+    font-size: 0px;
+}
+
+
+
+.ConditionCard > .card:hover{
+    width: 300px;
+    height: 300px;
+
+}
+
+.ConditionCard > .card:hover [class^="conditionDetails"]{
+    font-size: 18px;
+    font-weight: bolder;
+    color:rgb(36, 34, 78);
+
+}
+
+.conditionName{
+
+}
+.conditionDetails{
+    font-size: 0px;
+}
+
