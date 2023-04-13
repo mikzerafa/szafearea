@@ -5,6 +5,7 @@ import schizoData from '../Data/schizo.json'
 import Conditions from './Conditions';
 import ConditionsCards from './ConditionsCards';
 
+
 import { Grid } from './Generic/Grid';
 
 
@@ -58,6 +59,9 @@ const HomePage = () => {
             
     );
 }
+
+
+
 
 export {
     HomePage

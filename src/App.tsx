@@ -15,19 +15,22 @@ import { ArticlesPage } from './Components/ArticlesPage';
 import { MedReviewPage } from './Components/MedReviewPage';
 import { UrgentHelpPage } from './Components/UrgentHelpPage';
 import { Symptom } from './Components/SymptomList';
+import { JournalPage } from'./Components/JournalPage';
 
 
 const home = Nav.Home();
 const goal = Nav.Menu('/goal', 'Goal')
 const login = Nav.Menu('/login', "Login")
 
+const journal = Nav.Menu('/journal', 'Journal');
 const articles = Nav.Menu ('/articles', 'Articles')
 const medReview = Nav.Menu('/MedReview', 'Med Review')
 const urgentHelp = Nav.Menu('/UrgentHelp', 'Urgent Help')
 const symptomsAndStrategies = Nav.MenuLong('/SymptomsAndStrategies', 'Symptoms And Strategies')
 
-const headerNav = Nav.Bar([login, goal])
-const footerNav = Footer.nav(Nav.Bar([symptomsAndStrategies, articles, home, medReview, urgentHelp]))
+const headerNav = Nav.Bar([login, goal]);
+const footerNav = Footer.nav(Nav.Bar([symptomsAndStrategies, journal, home , articles, medReview, urgentHelp]));
+//const footerNav = Footer.nav(Nav.Bar([symptomsAndStrategies, journal, home, articles, medReview, urgentHelp]))
 
 const schizoGroup = Nav.link("https://www.facebook.com/groups/1544865272418437", "schizoaffective support group");
 const title = heading("SZafeArea");
@@ -56,6 +59,7 @@ const  App:React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path='/journal' element={<JournalPage/>} />
         <Route path="/articles" element={<ArticlesPage />} />
         <Route path="/SymptomsAndStrategies" element={<SymptomsAndStrategiesPage toSearch={toSearch} toStore={toStore} setToSearch={setToSearch} setToStore={setToStore}/>}/>
         <Route path="/MedReview" element={<MedReviewPage />} />

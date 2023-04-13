@@ -1,0 +1,93 @@
+{
+  "Argentina": {
+    "Centro de Asistencia al Suicida": "135"
+  },
+  "Austria": {
+    "Rat auf Draht": "147"
+  },
+  "Bangladesh": {
+    "Kaan Pete Roi": "01779554391, 01779554392"
+  },
+  "Belarus": {
+    "Belarus Suicide Hotline": "8 801 100 8 801"
+  },
+  "Bolivia": {
+    "Centro de Apoyo Integral": "800 10 2010"
+  },
+  "Bulgaria": {
+    "National Lifeline": "0035 9249 17 223"
+  },
+  "Chile": {
+    "Salud Responde": "600 360 7777"
+  },
+  "China": {
+    "Beijing Suicide Research and Prevention Center": "800-810-1117, 010-8295-1332"
+  },
+  "Colombia": {
+    "Linea Nacional": "106"
+  },
+  "Costa Rica": {
+    "Costa Rican Red Cross": "911"
+  },
+  "Croatia": {
+    "Plavi telefon": "1 48 03 888"
+  },
+  "Cyprus": {
+    "Cyprus Samaritans": "8000 7773"
+  },
+  "Czech Republic": {
+    "Linka Bezpečí": "116 111"
+  },
+  "Denmark": {
+    "Livslinien": "70 201 201"
+  },
+  "Dominican Republic": {
+    "Sistema Nacional de Emergencias": "911"
+  },
+  "Estonia": {
+    "Estonian Lifeline": "655 8088"
+  },
+  "Finland": {
+    "Suomen Mielenterveysseura": "09 2525 0113"
+  },
+  "Greece": {
+    "Klimaka": "1018"
+  },
+  "Hong Kong": {
+    "The Samaritans Hong Kong": "2896 0000"
+  },
+  "Hungary": {
+    "Lelki Elsősegély Telefonszolgálat": "116 123"
+  },
+  "Iceland": {
+    "Rauði Krossinn": "1717"
+  },
+  "Indonesia": {
+    "Kementerian Kesehatan": "150-0454"
+  },
+  "Ireland": {
+    "Samaritans Ireland": "116 123"
+  },
+  "Israel": {
+    "ERAN": "1201"
+  },
+  "Jamaica": {
+    "Mental Health Helpline": "888-639-5433"
+  },
+  "Kenya": {
+    "Befrienders Kenya": "+254 722 178 177"
+  },
+  "Latvia": {
+    "Skalbes": "371 67222922, 371 27722292"
+  },
+  "Lebanon": {
+    "Embrace LifeLine": "1564"
+  },
+  "Lithuania": {
+    "Vaikų linija": "8 800 20100"
+  },
+  "Luxembourg": {
+    "SOS Détresse": "454545"
+  },
+  "Malaysia": {
+    "B

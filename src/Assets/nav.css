@@ -1,43 +1,39 @@
 .NavHome{
-    
-    font-size: 45px;
+    position: sticky;
+    align-items: center;
+    font-size: 50px;
     padding-top: 20px;
     padding-right: 20px;
     padding-left: 20px;
-    padding-bottom: 0px;
+    padding-bottom: 20px;
     border-radius: 360px;
     border-width: 20px;
-
-    background: radial-gradient(#b7b7b7, #959494);
+    margin: auto;
+    text-decoration: none;
+    color: aliceblue;
 }
 
 
 
 .NavMenu{  
-    background: radial-gradient(#c6ffd4, #98fdb1);
-    width: 120px;
+    
     border-radius: 50px;
-    padding: 15px 18px;
+    padding: 20px 30px;
     font-size: 25px;
     line-height: 40px;
     border: none;
     transition: 0.2s;
-    box-shadow: inset 0 0 5px black;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
 }
 
 .NavMenu2{
-    background: radial-gradient(#c6ffd4, #98fdb1);
-    width: 250px;
     border-radius: 50px;
     padding: 15px 18px;
     font-size: 25px;
     line-height: 40px;
     border: none;
     transition: 0.2s;
-    box-shadow: inset 0 0 5px black;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -52,6 +48,8 @@
 .NavText{
    text-decoration: none;
    color: rgb(55, 55, 55);
+   color: aliceblue;
+   font-size: 36px;
 }
 
 .NavMenu:hover > .NavText, .NavMenu2:hover > .NavText{
@@ -59,12 +57,13 @@
 }
 
 .navMenuListItem{
+    display: inline;
     list-style-type: none;
-    display: inline-block;
     margin-right: 5px;
     margin-left: 5px;
+    color: aliceblue;
 }
 
 .NavMenuList{
-
+    color: aliceblue;
 }

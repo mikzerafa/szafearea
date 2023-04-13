@@ -1,8 +1,8 @@
 .footerNav{
     position: fixed;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.375), rgba(0,0,0,0.5));
-    width: 100vw;
+    background: linear-gradient(to bottom, rgba(36, 31, 132, 0.75), rgba(15, 40, 116, 0.9));
+    width:100vw;
     text-align: center;
     padding: 5px;
 }

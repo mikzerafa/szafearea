@@ -25,8 +25,24 @@
 
 }
 
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+
 .ConditionCard > .card:hover [class^="conditionDetails"]{
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
     font-size: 18px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     font-weight: bolder;
     color:rgb(36, 34, 78);
 

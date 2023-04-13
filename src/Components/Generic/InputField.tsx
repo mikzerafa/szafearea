@@ -1,5 +1,6 @@
 import React from 'react';
 import "../../Assets/inputField.css";
+import "../../Assets/Box.css";
 import { Symptom } from '../SymptomList';
 
 interface props{
@@ -15,6 +16,11 @@ interface prop{
 
 }
 
+interface describedSymptoms{
+  text: String;
+  setText: React.Dispatch<React.SetStateAction<string>> | any;
+}
+
 function toNumArray(arr:string){
   const strArr = arr.split(',');
   const numArr = strArr.map(Number)
@@ -23,6 +29,19 @@ function toNumArray(arr:string){
 }
 
 const InputField = {
+  Box:({text, setText}:describedSymptoms, placeholderText:string = "Enter Text") => {
+    return (
+      <form className='BoxInputForm'>
+        <input type='text' className='BoxInput' placeholder={placeholderText}
+        onChange={(e) => {
+          console.log('Box Text Updated');
+          text = e.target.value;
+          setText(text);
+      }}>
+        </input>
+      </form>
+    )
+  },
   checkBox:({toStore, setToStore, toSearch, setToSearch}: prop, toRun:Function, symptoms:Symptom[],symptom:Symptom, isChecked:boolean=false)=> {
     // console.log({key})
     // console.log({key}.key)
@@ -49,9 +68,9 @@ const InputField = {
     </input>
     </form>
   )},
-  normal: ({toSearch, setToSearch}:props) => {return (
+  normal: ({toSearch, setToSearch}:props, placeholderText:string = 'Enter Text') => {return (
     <form className='input'>
-        <input type='input' placeholder='Enter Text' className='inputField'
+        <input type='input' placeholder={placeholderText} className='inputField'
           value={toSearch}
           onChange={(e) => {
             setToSearch(e.target.value)
@@ -69,6 +88,6 @@ const InputField = {
   )}
 }
 
-export {
+export default{
     InputField
 }

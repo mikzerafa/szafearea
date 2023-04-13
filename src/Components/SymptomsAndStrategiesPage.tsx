@@ -1,11 +1,13 @@
 import React, { useState } from "react"
-import {InputField}from './Generic/InputField';
+import InputField from  './Generic/InputField';
 import SymptomList, {SchizophreniaCopingStrategies, SchizophreniaCopingStrategiesIcons, Symptom} from "./SymptomList";
 import { Grid } from "./Generic/Grid";
 import { card } from "./Generic/Card";
 import { InfoIcon } from "./Generic/Icons";
 
 import '../Assets/SymptomsAndStrategies.css'
+
+import Graph from '../Components/Generic/Graph'
 
 
 let visibleSymptoms = SymptomList.SymptomList;
@@ -17,6 +19,11 @@ interface prop{
     toStore: Symptom[];
     setToStore: React.Dispatch<React.SetStateAction<Symptom[]>>;
 
+}
+
+interface describedSymptoms{
+    text:string;
+    setText:React.Dispatch<React.SetStateAction<string>>;
 }
 
 function AddedSymptoms (symptoms: string[]) {
@@ -103,7 +110,7 @@ function AddTheRightTags(cards:any, symptom: Symptom, index =0, output:JSX.Eleme
     return output;
 }
 
-const SymptomsAndStrategiesPage = ({toSearch, setToSearch, toStore, setToStore}: prop) => {
+const SymptomsAndStrategiesPage = ({toSearch, setToSearch, toStore, setToStore}: prop, {text, setText}:describedSymptoms) => {
     
     if(toStore.length>0)
     {
@@ -190,7 +197,7 @@ const SymptomsAndStrategiesPage = ({toSearch, setToSearch, toStore, setToStore}:
         
     <div className='SymptomsAndStrategiesDiv'>
         <div className="SymptomsAndStrategiesHeader">
-            <InputField.inDiv toSearch={toSearch} setToSearch={setToSearch}/>
+            {InputField.InputField.normal({toSearch, setToSearch}, "Search Symptom")}
         </div>
         <div className="SelectedSymptomList">
             {gridOfSelectedCards}

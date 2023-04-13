@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
 
@@ -9,7 +10,7 @@
   flex-direction: column;
   background-color: #a5aff2;
   background: radial-gradient( #a1aeff, #7d8dfa);
-  font-family: "Neucha", cursive;
+  font-family: "Robot";
 }
 
 .Heading{

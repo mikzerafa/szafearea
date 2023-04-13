@@ -3,7 +3,7 @@ import React from "react";
 import '../../Assets/Card.css'
 import '../../Assets/Conditions.css'
 import { Symptom } from "../SymptomList";
-import { InputField } from "./InputField";
+import InputField  from "./InputField";
 
 
 interface prop{
@@ -40,7 +40,7 @@ interface prop{
       symptom: Symptom,
       isChecked: boolean
     ) => {
-      return InputField.checkBox(
+      return InputField.InputField.checkBox(
         { toStore, setToStore, toSearch, setToSearch },
         toRun,
         symptoms,
